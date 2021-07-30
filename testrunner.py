@@ -6,6 +6,7 @@ from reports import HTMLTestRunner
 from case.exam_case.teacher_case import TeacherCase
 from case.exam_case.smzd_case import Smzd, SzmdCase
 from case.vblog_case.index import VBlogCase
+from case.exam_case.meeting_case import Smzd,MeetingCase
 import unittest
 import os
 import time
@@ -24,6 +25,7 @@ suite.addTests([SzmdCase("test_001_taskSystem"),
                 SzmdCase("test_003_taskSystem")
                 ])
 
+suite.addTests([MeetingCase("test_001ConferenceInfo")])
 
 
 # suite.addTests([SzmdCase("test_001_taskSystem"),

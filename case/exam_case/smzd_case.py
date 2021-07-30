@@ -1,6 +1,5 @@
 import unittest
 import requests
-
 from case.exam_case import host
 from public.exam_public.smzd import Smzd
 
