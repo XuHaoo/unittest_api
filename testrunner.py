@@ -25,7 +25,8 @@ suite.addTests([SzmdCase("test_001_taskSystem"),
                 SzmdCase("test_003_taskSystem")
                 ])
 
-suite.addTests([MeetingCase("test_001ConferenceInfo")])
+suite.addTests([MeetingCase("test_001ConferenceInfo"),
+                MeetingCase("test_002ConferenceInfo")])
 
 
 # suite.addTests([SzmdCase("test_001_taskSystem"),
