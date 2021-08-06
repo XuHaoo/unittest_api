@@ -10,7 +10,7 @@ def __init__(self, requests):
 
 class Smzd:
 
-    print("Login  start  .........................................................................................>")
+    print(".......................................Login  start..................................................>")
 
     def Smzdlogin(self, token):
         """登录获取token等信息"""
@@ -35,6 +35,35 @@ class Smzd:
     #     self.assertEqual(act, '徐浩')
     # print('这个是登录成功的token'+token)
 
+
+    # def meetingMessage(self):
+    #     """新增会议"""
+    #     url = host + '/api/v1/Conference/SaveConferenceInfo'
+    #     headers = {'Content-Type': 'application/json;charset=UTF-8',
+    #                'Token': Smzd.token,
+    #                'ClientType': '1',
+    #                'Accept': 'application/json, text/plain, */*',
+    #                'Connection': 'keep-alive',
+    #                'ClientId': 'fe522376-313c-40c7-8f17-886a1bf33c62',
+    #                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+    #                              'Chrome/92.0.4515.107 Safari/537.36',
+    #                }
+    #     paylad = {'Date': '2021-07-30',
+    #               'address': '哒哒哒哒哒',
+    #               'category': 3,
+    #               'conferenceName': '测试会议' + Smzd.token,
+    #               'conferenceType': 0,
+    #               'endTime': '2021-07-30 17:00',
+    #               'introduction': "11111",
+    #               'liveUrl': '',
+    #               'project': '豪森笔',
+    #               'projectID': 7,
+    #               'startTime': '2021-07-30 14:00'
+    #               }
+    #     result = requests.post(url, headers=headers, json=paylad)
+    #     result = result.json()
+    #     print(result)
+    #
 
 
 

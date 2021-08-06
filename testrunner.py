@@ -20,25 +20,25 @@ suite = unittest.TestSuite()
 
 # 添加多个测试用例
 
-suite.addTests([SzmdCase("test_001_taskSystem"),
-                SzmdCase("test_002_taskSystem"),
-                SzmdCase("test_003_taskSystem")
-                ])
-
-suite.addTests([MeetingCase("test_001ConferenceInfo"),
-                MeetingCase("test_002ConferenceInfo")])
-
-
 # suite.addTests([SzmdCase("test_001_taskSystem"),
-#                 TeacherCase("test_002_insert_paper"),
-#                 TeacherCase("test_003_select_paper"),
-#                 TeacherCase("test_004_edit_paper"),
-#                 TeacherCase("test_005_delete_paper"),
-#                 TeacherCase("test_006_insert_questions"),
-#                 TeacherCase("test_007_select_questions"),
-#                 TeacherCase("test_008_update_questions"),
-#                 TeacherCase("test_009_delete_questions"),
+#                 SzmdCase("test_002_taskSystem"),
+#                 SzmdCase("test_003_taskSystem")
 #                 ])
+#
+# suite.addTests([MeetingCase("test_001ConferenceInfo"),
+#                 MeetingCase("test_002ConferenceInfo")])
+
+
+suite.addTests([SzmdCase("test_001_taskSystem"),
+                TeacherCase("test_002_insert_paper"),
+                TeacherCase("test_003_select_paper"),
+                TeacherCase("test_004_edit_paper"),
+                TeacherCase("test_005_delete_paper"),
+                TeacherCase("test_006_insert_questions"),
+                TeacherCase("test_007_select_questions"),
+                TeacherCase("test_008_update_questions"),
+                TeacherCase("test_009_delete_questions"),
+                ])
 # suite.addTests([StudentCase("test_001_register"),
 #                 StudentCase("test_002_login"),
 #                 StudentCase("test_003_user_info"),
