@@ -75,114 +75,114 @@ class SmdCase(unittest.TestCase):
         rid = result["Data"]
         globals()["Data"] = rid
 
-    # def test_002_taskSystem(self):
-    #     """获取任务列表，发送的任务"""
-    #     surl = host + '/api/v1/TaskSystem/QuerySendTaskList'
-    #
-    #     headers = {'Content-Type': 'application/json;charset=UTF-8',
-    #                'Token': Smzd.token,
-    #                'ClientType': '1',
-    #                'Accept': 'application/json, text/plain, */*',
-    #                'Connection': 'keep-alive',
-    #                'ClientId': 'fe522376-313c-40c7-8f17-886a1bf33c62',
-    #                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
-    #                              'Chrome/92.0.4515.107 Safari/537.36',
-    #                'Authorization': '19042607027949b4bb569ece1a7d0cc0'
-    #                }
-    #     payload = {'pageIndex': 1, 'pageSize': 10, 'fuzzyField': '', 'isNewFeedback': True}
-    #     result = requests.post(headers=headers, url=surl, json=payload)
-    #     result = result.json()
-    #     print('获取发送任务列表返回参数', result)
-    #     try:
-    #         act = result["Data"]["DetailedMessage"]
-    #     except KeyError:  # 避免取不到key报错
-    #         act = 1
-    #     print("返回校验成功")
-    #     # 设置断言，返回结果中包含用户名
-    #     self.assertEqual(1, act)
-    #
-    # def test_003_taskSystem(self):
-    #     """发布-任务详情"""
-    #     url = host + '/api/v1/TaskSystem/QueryTaskDetail'
-    #     headers = {
-    #         'Token': Smzd.token,
-    #         'ClientType': '1',
-    #         'ClientId': 'fe522376-313c-40c7-8f17-886a1bf33c62',
-    #         'Content-Type': 'application/json;charset=UTF-8',
-    #         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
-    #                       'Chrome/92.0.4515.107 Safari/537.36'
-    #     }
-    #     # 使用新增任务是的ID信息
-    #     paylad = {'taskId':globals()["Data"]}
-    #     result = requests.post(headers=headers, json=paylad, url=url)
-    #     result = result.json()
-    #     print('获取任务详情返回参数', result)
-    #     try:
-    #         act = result["Data"]["DetailedMessage"]
-    #     except KeyError:  # 避免取不到key报错
-    #         act = 1
-    #     print("返回校验成功")
-    #     # 设置断言，返回结果中包含用户名
-    #     self.assertEqual(1, act)
-    #
-    # def test_004_taskSystem(self):
-    #     """获取任务类类型（根据类别）"""
-    #     url = host + '/api/v1/TaskSystem/GetTaskTypeList'
-    #     headers = {
-    #         'Token': Smzd.token,
-    #         'ClientType': '1',
-    #         'ClientId': 'fe522376-313c-40c7-8f17-886a1bf33c62',
-    #         'Content-Type': 'application/json;charset=UTF-8',
-    #         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
-    #                       'Chrome/92.0.4515.107 Safari/537.36'
-    #     }
-    #     paylad = {'parentId': 0}
-    #     result = requests.post(url, headers=headers, json=paylad)
-    #     result = result.json()
-    #     print('任务详情返回参数', result)
-    #     try:
-    #         act = result["Data"]["DetailedMessage"]
-    #     except KeyError:  # 避免取不到key报错
-    #         act = 1
-    #     print("返回校验成功")
-    #     # 设置断言，返回结果中包含用户名
-    #     self.assertEqual(1, act)
-    #
-    # def test_005_taskSystem(self):
-    #     """对已发布任务进行追加接收人"""
-    #     url = host + '/api/v1/TaskSystem/AddTaskReceive'
-    #     headers = {
-    #         'Token': Smzd.token,
-    #         'ClientType': '1',
-    #         'ClientId': 'fe522376-313c-40c7-8f17-886a1bf33c62',
-    #         'Content-Type': 'application/json;charset=UTF-8',
-    #         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
-    #                       'Chrome/92.0.4515.107 Safari/537.36'
-    #     }
-    #     # 使用新增任务时的ID
-    #     paylad = {
-    #         'taskId': globals()["Data"],
-    #         'salesList': [],
-    #         'groupPostingSales': False,
-    #         'doctorList': [
-    #             {
-    #                 'UserId': 58282,
-    #                 'UserName': "徐浩",
-    #                 'Type': 2
-    #             }
-    #         ],
-    #         'groupPostingDoctor': False,
-    #         'nurseList': [],
-    #         'groupPostingNurse': False,
-    #         'patientList': [],
-    #         'groupPostingPatient': False,
-    #         'academicList': [],
-    #         'otherList': []
-    #     }
-    #     result = requests.post(url, headers=headers, json=paylad)
-    #     result = result.json()
-    #     print('追加人员状态', result)
-    #
+    def test_002_taskSystem(self):
+        """获取任务列表，发送的任务"""
+        surl = host + '/api/v1/TaskSystem/QuerySendTaskList'
+
+        headers = {'Content-Type': 'application/json;charset=UTF-8',
+                   'Token': Smzd.token,
+                   'ClientType': '1',
+                   'Accept': 'application/json, text/plain, */*',
+                   'Connection': 'keep-alive',
+                   'ClientId': 'fe522376-313c-40c7-8f17-886a1bf33c62',
+                   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                                 'Chrome/92.0.4515.107 Safari/537.36',
+                   'Authorization': '19042607027949b4bb569ece1a7d0cc0'
+                   }
+        payload = {'pageIndex': 1, 'pageSize': 10, 'fuzzyField': '', 'isNewFeedback': True}
+        result = requests.post(headers=headers, url=surl, json=payload)
+        result = result.json()
+        print('获取发送任务列表返回参数', result)
+        try:
+            act = result["Data"]["DetailedMessage"]
+        except KeyError:  # 避免取不到key报错
+            act = 1
+        print("返回校验成功")
+        # 设置断言，返回结果中包含用户名
+        self.assertEqual(1, act)
+
+    def test_003_taskSystem(self):
+        """发布-任务详情"""
+        url = host + '/api/v1/TaskSystem/QueryTaskDetail'
+        headers = {
+            'Token': Smzd.token,
+            'ClientType': '1',
+            'ClientId': 'fe522376-313c-40c7-8f17-886a1bf33c62',
+            'Content-Type': 'application/json;charset=UTF-8',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                          'Chrome/92.0.4515.107 Safari/537.36'
+        }
+        # 使用新增任务是的ID信息
+        paylad = {'taskId':globals()["Data"]}
+        result = requests.post(headers=headers, json=paylad, url=url)
+        result = result.json()
+        print('获取任务详情返回参数', result)
+        try:
+            act = result["Data"]["DetailedMessage"]
+        except KeyError:  # 避免取不到key报错
+            act = 1
+        print("返回校验成功")
+        # 设置断言，返回结果中包含用户名
+        self.assertEqual(1, act)
+
+    def test_004_taskSystem(self):
+        """获取任务类类型（根据类别）"""
+        url = host + '/api/v1/TaskSystem/GetTaskTypeList'
+        headers = {
+            'Token': Smzd.token,
+            'ClientType': '1',
+            'ClientId': 'fe522376-313c-40c7-8f17-886a1bf33c62',
+            'Content-Type': 'application/json;charset=UTF-8',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                          'Chrome/92.0.4515.107 Safari/537.36'
+        }
+        paylad = {'parentId': 0}
+        result = requests.post(url, headers=headers, json=paylad)
+        result = result.json()
+        print('任务详情返回参数', result)
+        try:
+            act = result["Data"]["DetailedMessage"]
+        except KeyError:  # 避免取不到key报错
+            act = 1
+        print("返回校验成功")
+        # 设置断言，返回结果中包含用户名
+        self.assertEqual(1, act)
+
+    def test_005_taskSystem(self):
+        """对已发布任务进行追加接收人"""
+        url = host + '/api/v1/TaskSystem/AddTaskReceive'
+        headers = {
+            'Token': Smzd.token,
+            'ClientType': '1',
+            'ClientId': 'fe522376-313c-40c7-8f17-886a1bf33c62',
+            'Content-Type': 'application/json;charset=UTF-8',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                          'Chrome/92.0.4515.107 Safari/537.36'
+        }
+        # 使用新增任务时的ID
+        paylad = {
+            'taskId': globals()["Data"],
+            'salesList': [],
+            'groupPostingSales': False,
+            'doctorList': [
+                {
+                    'UserId': 58282,
+                    'UserName': "徐浩",
+                    'Type': 2
+                }
+            ],
+            'groupPostingDoctor': False,
+            'nurseList': [],
+            'groupPostingNurse': False,
+            'patientList': [],
+            'groupPostingPatient': False,
+            'academicList': [],
+            'otherList': []
+        }
+        result = requests.post(url, headers=headers, json=paylad)
+        result = result.json()
+        print('追加人员状态', result)
+
     def test_006_taskSystem(self):
         """给任务发送消息"""
         url = host + '/api/v1/TaskSystem/SendMessage'
